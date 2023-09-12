@@ -1,7 +1,7 @@
 "use client";
 
-import { getProviders, signIn } from "next-auth/react";
-import { useState, useEffect } from "react";
+import { getProviders, signIn } from 'next-auth/react';
+import { useState, useEffect } from 'react';
 
 type Provider = {
   id: string;
@@ -20,8 +20,8 @@ const AuthProviders = () => {
     const fetchProviders = async () => {
       const res = await getProviders();
       setProviders(res);
-      console.log(res);
-    };
+      // console.log(res);
+    }
     fetchProviders();
   }, []);
 
@@ -32,7 +32,7 @@ const AuthProviders = () => {
           <button key={i} onClick={() => signIn(provider?.id)}>{provider.id}</button>
         ))}
       </div>
-    );
+    )
   }
 };
 
